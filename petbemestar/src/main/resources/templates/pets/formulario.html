@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de pet</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <h1>Cadastrar Novo pet</h1>
+
+    <form th:action="@{/paginas/pets/novo}" th:object="${pet}" method="post">
+        
+        <p>
+            <label>Nome do pet</label>
+            <input type="text" th:field="*{nome}">
+            <span th:errors="*{nome}" style="color:red"></span>
+        </p>
+
+        <p>
+            <label>Tutor</label>
+            <select th:field="*{tutor.id}">
+                <option th:each="t : ${tutores}" th:value="${t.id}" th:text="${t.nome}"></option>
+            </select>
+            <span th:errors="*{tutor}" style="color:red"></span>
+        </p>
+
+        <p>
+            <label>Especie</label>
+            <select th:field="*{especie}">
+                <option th:each="tp : ${especies}" th:value="${tp}" th:text="${tp}"></option>
+            </select>
+            <span th:errors="*{especie}" style="color:red"></span>
+        </p>
+
+        <p>
+            <label>Tamanho</label>
+            <select th:field="*{tamanho}">
+                <option th:each="tm : ${tamanhos}" th:value="${tm}" th:text="${tm}"></option>
+            </select>
+            <span th:errors="*{tamanho}" style="color:red"></span>
+        </p>
+
+        <button type="submit">Salvar</button>
+        <a th:href="@{/paginas/pets}">Cancelar</a>
+    </form>
+</body>
+</html>
