@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+BR:wght@100..400&display=swap');
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Nunito', 'Segoe UI', sans-serif; 
+    font-family: 'Playwrite+BR', 'Segoe UI', sans-serif; 
 }
 
 body {
@@ -18,7 +19,7 @@ body {
 }
 
 h1 {
-    color: #1b4332; 
+    color: rgb(119, 26, 84); 
     margin-bottom: 25px;
     font-size: 2.2rem;
     font-weight: 700;
@@ -36,26 +37,26 @@ h1::after {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background-color: #40916c;
+    background-color: rgb(188, 118, 177);
     border-radius: 2px;
 }
 
 /* Links e Botões */
 a {
-    color: #2d6a4f;
+    color: rgb(159, 105, 171);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #1b4332;
+    color: rgb(119, 26, 84);
     text-decoration: underline;
 }
 
 
 .btn-novo {
-    background-color: #40916c; 
+    background-color: rgb(102, 102, 179); 
     color: white;
     padding: 12px 24px;
     border-radius: 8px;
@@ -63,16 +64,16 @@ a:hover {
     display: inline-block;
     margin-bottom: 25px;
     font-weight: 700;
-    box-shadow: 0 4px 6px rgba(64, 145, 108, 0.2); 
+    box-shadow: 0 4px 6px rgb(128, 128, 192); 
     transition: all 0.3s ease;
 }
 
 .btn-novo:hover {
-    background-color: #2d6a4f;
+    background-color: rgb(74, 74, 151);
     color: white;
     text-decoration: none;
     transform: translateY(-2px); 
-    box-shadow: 0 6px 12px rgba(64, 145, 108, 0.3);
+    box-shadow: 0 6px 12px rgb(128, 128, 192);
 }
 
 
@@ -95,7 +96,7 @@ th, td {
 }
 
 th {
-    background-color: #2d6a4f;
+    background-color: rgb(128, 128, 192);
     color: white;
     font-weight: 600;
     text-transform: uppercase;
@@ -130,7 +131,7 @@ label {
     display: block;
     font-weight: 600;
     margin-bottom: 8px;
-    color: #2d6a4f;
+    color: rgb(73, 73, 148);
     font-size: 0.95rem;
 }
 
@@ -146,9 +147,9 @@ input[type="text"], input[type="email"], input[type="number"], select {
 
 input:focus, select:focus {
     outline: none;
-    border-color: #40916c;
+    border-color: rgb(128, 128, 192);
     background-color: white;
-    box-shadow: 0 0 0 3px rgba(64, 145, 108, 0.15);
+    box-shadow: 0 0 0 3px rgb(128, 128, 192);
 }
 
 
@@ -164,12 +165,12 @@ button {
 }
 
 button[type="submit"] {
-    background-color: #40916c;
+    background-color: rgb(128, 128, 192);
     color: white;
 }
 
 button[type="submit"]:hover {
-    background-color: #2d6a4f;
+    background-color: rgb(128, 128, 192);
     transform: translateY(-1px);
 }
 
