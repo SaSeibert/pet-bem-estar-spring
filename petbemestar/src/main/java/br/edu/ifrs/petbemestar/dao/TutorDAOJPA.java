@@ -54,6 +54,7 @@ public class TutorDAOJPA implements TutorDAO{
 		return total > 0;
 	}
 	
+	//Item 3 - Isso também ia pro commit anterior, mas esqueci de por na mensagem
 	@Override
 	public boolean telefoneJaCadastrado(String telefone) {
 		Long total = em.createQuery("Select count(t) from Tutor t WHERE t.telefone = :telefone", Long.class)
