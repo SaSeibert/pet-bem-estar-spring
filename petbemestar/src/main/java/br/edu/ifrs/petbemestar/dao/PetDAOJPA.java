@@ -46,7 +46,11 @@ public class PetDAOJPA implements PetDAO {
 		if(pet != null) {
 			em.remove(pet);
 		}
-		
+	}
+	
+	@Override
+	public List<Pet> buscarPorTutor(Long idTutor){
+		return em.createQuery("Select p From Pet p WHERE p.tutor.id = :idTutor", Pet.class).setParameter("idTutor", idTutor).getResultList();
 	}
 
 }

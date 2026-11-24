@@ -45,4 +45,29 @@ public class TutorDAOJPA implements TutorDAO{
 		}
 	}
 	
+	@Override
+	public boolean verificarSeTemPets(Long idTutor) {
+		Long total = em.createQuery(
+				"Select Count(p) from Pet p WHERE p.tutor.id = :idTutor",Long.class)
+		.setParameter("idTutor", idTutor).getSingleResult();
+		
+		return total > 0;
+	}
+	
+	@Override
+	public boolean telefoneJaCadastrado(String telefone) {
+		Long total = em.createQuery("Select count(t) from Tutor t WHERE t.telefone = :telefone", Long.class)
+				.setParameter("telefone", telefone).getSingleResult();
+		
+		return total > 0;
+	}
+	
+	@Override
+	public boolean telefonePertenceAOutro(Long idTutor, String telefone) {
+		Long total = em.createQuery("Select count(t) from Tutor t where t.telefone = :telefone AND t.id <> :idTutor", Long.class)
+				.setParameter("telefone", telefone).setParameter("idTutor", idTutor).getSingleResult();
+		
+		return total > 0;
+	}
+	
 }

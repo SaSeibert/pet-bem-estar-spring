@@ -12,5 +12,6 @@ public interface PetDAO {
 	List<Pet> listarTodos();
 	void atualizar(Pet pet);
 	void remover(Long id);
+	List<Pet> buscarPorTutor(Long id);
 
 }

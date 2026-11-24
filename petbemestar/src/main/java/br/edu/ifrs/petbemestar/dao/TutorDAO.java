@@ -11,4 +11,8 @@ public interface TutorDAO {
 	List<Tutor> listarTodos();
 	void atualizar(Tutor tutor);
 	void remover(Long id);
+	boolean verificarSeTemPets(Long id);
+	boolean telefoneJaCadastrado(String telefone);
+	boolean telefonePertenceAOutro(Long idTutor, String telefone);
+	
 }
