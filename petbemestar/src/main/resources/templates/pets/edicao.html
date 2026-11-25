@@ -6,10 +6,13 @@
 	<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+	<div th:replace="~{fragments/cabecalho :: cabecalho}"></div>
     <h1>Editar pet</h1>
 
     <form th:action="@{/paginas/pets/editar}" th:object="${pet}" method="post">
         <input type="hidden" th:field="*{id}">
+        
+        <div th:if="${erro}" style="color: red; margin-bottom: 15px; font-weight: bold; text-align: center;" th:text="${erro}"></div>
         
         <p>
             <label>Nome do pet</label>
@@ -20,6 +23,7 @@
         <p>
             <label>Tutor</label>
             <select th:field="*{tutor.id}">
+                <option value="">Selecione um tutor...</option>
                 <option th:each="t : ${tutores}" th:value="${t.id}" th:text="${t.nome}"></option>
             </select>
             <span th:errors="*{tutor}" style="color:red"></span>

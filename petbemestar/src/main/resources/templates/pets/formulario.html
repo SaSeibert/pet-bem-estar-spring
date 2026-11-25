@@ -6,9 +6,11 @@
 	<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+	<div th:replace="~{fragments/cabecalho :: cabecalho}"></div>
     <h1>Cadastrar Novo pet</h1>
 
     <form th:action="@{/paginas/pets/novo}" th:object="${pet}" method="post">
+		<div th:if="${erro}" style="color: red; margin-bottom: 15px; font-weight: bold; text-align: center;" th:text="${erro}"></div>
         
         <p>
             <label>Nome do pet</label>
@@ -19,6 +21,7 @@
         <p>
             <label>Tutor</label>
             <select th:field="*{tutor.id}">
+                <option value="">Selecione um tutor :</option>
                 <option th:each="t : ${tutores}" th:value="${t.id}" th:text="${t.nome}"></option>
             </select>
             <span th:errors="*{tutor}" style="color:red"></span>
@@ -27,7 +30,7 @@
         <p>
             <label>Especie</label>
             <select th:field="*{especie}">
-                <option th:each="tp : ${especies}" th:value="${tp}" th:text="${tp}"></option>
+                <option th:each="e : ${especies}" th:value="${e}" th:text="${e}"></option>
             </select>
             <span th:errors="*{especie}" style="color:red"></span>
         </p>

@@ -6,8 +6,11 @@
 	<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+	
+	<div th:replace="~{fragments/cabecalho :: cabecalho}"></div>
+	
     <h1>Lista de pets</h1>
-    <a th:href="@{/paginas/pets/novo}">Cadastrar Novo Pet</a>
+    <a th:href="@{/paginas/pets/novo}" class="btn-novo" style="margin-bottom: 20px;">Cadastrar Novo Pet</a>
     <br><br>
 
     <table border="1">
@@ -31,7 +34,7 @@
                 <td>
                     <a th:href="@{/paginas/pets/{id}/editar(id=${p.id})}">Editar</a>
                     <form th:action="@{/paginas/pets/{id}/remover(id=${p.id})}" method="post" style="display:inline">
-                        <button type="submit" onclick="return confirm('Tem certeza que deseja remover?');">Remover</button>
+                        <button type="submit" class="btn-remover" onclick="return confirm('Tem certeza que deseja remover?');">Remover</button>
                     </form>
                 </td>
             </tr>

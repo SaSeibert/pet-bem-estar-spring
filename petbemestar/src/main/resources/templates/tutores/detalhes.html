@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ficha do Tutor</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div th:replace="~{fragments/cabecalho :: cabecalho}"></div>
+
+    <h1>Ficha do Tutor</h1>
+
+    <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; max-width: 800px;">
+        <p><strong>Nome:</strong> <span th:text="${tutor.nome}"></span></p>
+        <p><strong>Email:</strong> <span th:text="${tutor.email}"></span></p>
+        <p><strong>Telefone:</strong> <span th:text="${tutor.telefone}"></span></p>
+    </div>
+
+    <h2>Pets</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Especie</th>
+                <th>Tamanho</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:if="${#lists.isEmpty(pets)}">
+                <td colspan="4" style="text-align: center;">Nao existem pets cadastrados para esse tutor</td>
+            </tr>
+            <tr th:each="p : ${pets}">
+                <td th:text="${p.id}"></td>
+                <td th:text="${p.nome}"></td>
+                <td th:text="${p.especie}"></td>
+                <td th:text="${p.tamanho}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <a th:href="@{/paginas/tutores}" class="btn-novo">Voltar para a lista</a>
+</body>
+</html>
