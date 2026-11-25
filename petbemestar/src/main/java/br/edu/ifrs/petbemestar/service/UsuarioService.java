@@ -1,5 +1,6 @@
 package br.edu.ifrs.petbemestar.service;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import br.edu.ifrs.petbemestar.dao.UsuarioDAO;

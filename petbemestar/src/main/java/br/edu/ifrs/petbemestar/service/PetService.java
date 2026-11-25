@@ -26,7 +26,7 @@ public class PetService {
 	}
 	
 	public List<Pet> buscarPorTutor(Long idTutor){
-		return petdao.buscarPorTutor(idTutor);}
+		return petdao.buscarPorTutor(idTutor);
 	}
 
 	public Pet buscarPorId(Long id) {
